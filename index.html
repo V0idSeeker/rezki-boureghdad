@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" data-mode="engineer">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rezki Boureghdad</title>
+<meta name="description" content="Rezki Boureghdad — back-end & data architect at Solrus (Algiers) and computer-science educator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script>
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('motion');
+  setTimeout(() => { if (!window.__motion) document.documentElement.classList.remove('motion'); }, 2500);
+}
+</script>
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --ink:#121A24; --muted:#5A6675; --line:#D5DBE2;
+  --cobalt:#3446E0; --saffron:#B86E00;
+  --accent:var(--cobalt); --other:var(--saffron);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E141B; --surface:#151D27; --ink:#E6EBF0; --muted:#8D99A8; --line:#253140;
+    --cobalt:#8C98FF; --saffron:#F2B441; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E141B; --surface:#151D27; --ink:#E6EBF0; --muted:#8D99A8; --line:#253140;
+  --cobalt:#8C98FF; --saffron:#F2B441; color-scheme:dark;
+}
+html[data-mode="educator"]{ --accent:var(--saffron); --other:var(--cobalt); }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media (min-width:720px){.wrap{padding:0 32px}}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.bar b{font:600 15px var(--display);letter-spacing:-.01em}
+.bar nav{display:flex;gap:18px;font:500 13px var(--mono);overflow-x:auto}
+.bar nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+.bar nav a:hover{color:var(--ink)}
+@media (max-width:640px){.bar nav a:not(.cv){display:none}}
+.cv{color:var(--accent)!important}
+
+/* hero: the grammar rule is the switch */
+.hero{padding-top:72px;padding-bottom:56px}
+.rule{font:500 clamp(20px,4.2vw,40px)/1.2 var(--mono);display:flex;flex-wrap:wrap;align-items:baseline;gap:.35em .5em;margin:0 0 36px}
+.rule .lhs{color:var(--muted)}
+.rule .op{color:var(--muted);opacity:.7}
+.alt{font:inherit;color:var(--muted);background:none;border:0;padding:.05em .25em;cursor:pointer;position:relative;border-radius:6px;transition:color .25s}
+.alt::after{content:"";position:absolute;left:.25em;right:.25em;bottom:-.08em;height:.12em;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.alt[aria-pressed="true"]{color:var(--accent)}
+.alt[aria-pressed="true"]::after{transform:scaleX(1)}
+.alt:hover{color:var(--ink)}
+.rule .hint{flex-basis:100%;font:400 13px var(--mono);color:var(--muted);margin-top:6px}
+h1{font:800 clamp(48px,10vw,124px)/.9 var(--display);letter-spacing:-.045em;margin:0}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .ln>span{display:block}
+h1 .acc{color:var(--accent);transition:color .3s}
+.lead{max-width:640px;font-size:clamp(17px,2vw,20px);margin:28px 0 0;color:var(--ink)}
+.lead [data-for]{display:none}
+html[data-mode="engineer"] .lead [data-for="engineer"],
+html[data-mode="educator"] .lead [data-for="educator"]{display:inline}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin:28px 0 0;padding:0;list-style:none;font:13px var(--mono);color:var(--muted)}
+.facts a{text-decoration-color:var(--line);text-underline-offset:3px}
+
+/* sections reorder per mode */
+main{display:flex;flex-direction:column}
+section{padding:56px 0;border-top:1px solid var(--line);background:var(--bg);position:relative}
+#work{order:1}#stack{order:2}#teaching{order:3}#path{order:4}#contact{order:9}
+html[data-mode="educator"] #teaching{order:1}
+html[data-mode="educator"] #path{order:2}
+html[data-mode="educator"] #work{order:3}
+html[data-mode="educator"] #stack{order:4}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:28px}
+h2{font:700 clamp(28px,4vw,40px)/1.05 var(--display);letter-spacing:-.03em;margin:0}
+.head p{margin:0;color:var(--muted);max-width:520px;font-size:15px}
+.prod{font:12px var(--mono);color:var(--accent);display:block;margin-bottom:6px}
+
+/* work */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:760px){.grid{grid-template-columns:repeat(6,1fr)}.card{grid-column:span 3}.card.wide{grid-column:span 6}.card.third{grid-column:span 2}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:translate .25s cubic-bezier(.2,.8,.2,1),border-color .25s}
+.grid .card:hover{translate:0 -3px;border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.card.wide{display:grid;gap:10px 32px}
+@media (min-width:760px){.card.wide{grid-template-columns:1.1fr 1fr}.card.wide>.meta,.card.wide>h3,.card.wide>.sum{grid-column:1}.card.wide>ul{grid-column:2;grid-row:1 / span 4}.card.wide>.chips{grid-column:1}}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font:12px var(--mono);color:var(--muted)}
+.nda{color:var(--accent)}
+.nda::before{content:"◆ "}
+.confidential{border-style:dashed;background:transparent}
+h3{font:600 21px/1.2 var(--display);letter-spacing:-.015em;margin:0}
+.sum{margin:0;color:var(--muted);font-size:15px}
+.card ul{margin:0;padding-left:18px;font-size:14.5px}
+.card li{margin:4px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chips span{font:12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--muted)}
+.card a.more{font:13px var(--mono);color:var(--accent);text-underline-offset:3px}
+
+/* teaching: a syllabus */
+.syllabus{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:860px){.syllabus{grid-template-columns:1.3fr 1fr}}
+.subjects{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.subjects li{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:14px 20px;border-top:1px solid var(--line)}
+.subjects li:first-child{border-top:0}
+.subjects code{font:12px var(--mono);color:var(--accent)}
+.subjects strong{font-weight:600}
+.subjects small{font:12px var(--mono);color:var(--muted);text-align:right}
+.approach{display:flex;flex-direction:column;gap:16px}
+.approach .card{gap:6px}
+.approach h3{font-size:18px}
+.approach p{margin:0;font-size:14.5px;color:var(--muted)}
+
+/* stack */
+.stack{display:grid;gap:0;grid-template-columns:1fr;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+@media (min-width:760px){.stack{grid-template-columns:repeat(2,1fr)}}
+.stack div{padding:18px 22px;border-top:1px solid var(--line)}
+@media (min-width:760px){.stack div:nth-child(-n+2){border-top:0}.stack div:nth-child(odd){border-right:1px solid var(--line)}}
+@media (max-width:759px){.stack div:first-child{border-top:0}}
+.stack dt{font:12px var(--mono);color:var(--accent);margin-bottom:6px}
+.stack dd{margin:0;font-size:15px}
+
+/* path */
+.path{list-style:none;margin:0;padding:0}
+.path li{display:grid;grid-template-columns:1fr;gap:4px 32px;padding:18px 0;border-top:1px solid var(--line)}
+.path li:first-child{border-top:0;padding-top:0}
+@media (min-width:760px){.path li{grid-template-columns:180px 1fr}}
+.path time{font:13px var(--mono);color:var(--muted)}
+.path h3{font-size:19px}
+.path p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.path .kind{font:11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.creds span{font:13px var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 12px}
+
+/* contact */
+#contact h2{font-size:clamp(36px,7vw,72px);letter-spacing:-.04em}
+#contact h2 a{color:var(--accent);text-decoration:none;border-bottom:3px solid currentColor}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.links a{font:500 14px var(--mono);text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 18px}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+/* initial states, only while Motion is running the entrance */
+.motion .rule>*,.motion .lead,.motion .facts,
+.motion :is(.head,.card,.subjects li,.stack div,.path li,.creds span,#contact h2,.links a){opacity:0}
+.motion h1 .ln>span{transform:translateY(105%)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <b>R. Boureghdad</b>
+    <nav aria-label="Sections">
+      <a href="#work">work</a>
+      <a href="#teaching">teaching</a>
+      <a href="#stack">stack</a>
+      <a href="#path">path</a>
+      <a href="#contact">contact</a>
+      <a class="cv" href="Rezki_Boureghdad_CV_2026.pdf" download>cv.pdf ↓</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <p class="rule" role="group" aria-label="Choose a view">
+    <span class="lhs">rezki</span><span class="op">::=</span>
+    <button class="alt" data-mode="engineer" aria-pressed="true">engineer</button><span class="op">|</span>
+    <button class="alt" data-mode="educator" aria-pressed="false">educator</button>
+    <span class="hint">// pick one — the page re-derives itself</span>
+  </p>
+  <h1><span class="ln"><span>Rezki</span></span><span class="ln acc"><span>Boureghdad</span></span></h1>
+  <p class="lead">
+    <span data-for="engineer">Back-end and data architect at <a href="https://www.solrus.pro" target="_blank" rel="noopener">Solrus</a>, a software studio in Algiers. I design the data models, APIs and integrations that let a product grow without a rewrite.</span>
+    <span data-for="educator">Computer-science educator. I spent two years at Université M'Hamed Bougara teaching 12 subjects, from algorithms to compiler theory, to Bachelor's and Master's students. I still build production systems every day, so the examples I use in class come from real projects.</span>
+  </p>
+  <ul class="facts">
+    <li>Algiers, Algeria</li>
+    <li>MSc Software Engineering &amp; Data Science</li>
+    <li>Arabic · French · English (C2)</li>
+    <li><a href="mailto:boureghdadrezki@gmail.com">boureghdadrezki@gmail.com</a></li>
+  </ul>
+</div>
+
+<main>
+
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="prod">work ::= project+</span><h2>Selected work</h2></div>
+      <p>Public, open and personal projects only. Confidential client work is not described (◆).</p>
+    </div>
+    <div class="grid">
+
+      <article class="card wide">
+        <div class="meta"><span>Solrus case study</span><span>Recruitment SaaS</span></div>
+        <h3>Forsa / Aamal ATS</h3>
+        <p class="sum">Connects companies, independent recruiters and job seekers in Algeria.</p>
+        <ul>
+          <li>Semantic job matching using sentence-transformer embeddings, plus location search with PostGIS.</li>
+          <li>WebSocket chat, community forum, FCM push notifications and SlickPay subscriptions.</li>
+          <li>Flutter mobile app and admin panel.</li>
+        </ul>
+        <div class="chips"><span>FastAPI</span><span>PostGIS</span><span>Embeddings</span><span>Flutter</span><span>Docker</span></div>
+        <a class="more" href="https://www.solrus.pro/work/forsa-aamal-ats" target="_blank" rel="noopener">Read the case study →</a>
+      </article>
+
+      <article class="card">
+        <div class="meta"><span>Own product</span><span>Retail ops</span></div>
+        <h3>e-motion</h3>
+        <p class="sum">Back-office for cash-on-delivery shops in Algeria: orders, stock, couriers, and the profit that is actually left.</p>
+        <ul>
+          <li>Weighted-average purchase cost, stock that can never go below zero, and alerts for customers who often cancel or return.</li>
+          <li>Excel import, packing slips, audit log, EN/FR. Runs on free tiers.</li>
+        </ul>
+        <div class="chips"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>Vercel</span></div>
+      </article>
+
+      <article class="card confidential">
+        <div class="meta"><span class="nda">Under NDA</span></div>
+        <h3>Confidential client systems</h3>
+        <p class="sum">Most of my production work at Solrus is covered by non-disclosure agreements: the projects themselves, not only the client names. That is why they are not listed here.</p>
+        <p class="sum">In an interview I can talk about architecture, data modelling and integration approaches in general terms, without disclosing those projects.</p>
+      </article>
+
+      <article class="card third">
+        <div class="meta"><span>Community</span><span>Multi-tenant</span></div>
+        <h3>Ahl Quran school manager</h3>
+        <p class="sum">Manages Quran study circles for several organisations: attendance, student progress, messaging and reports. Web and mobile apps.</p>
+        <div class="chips"><span>FastAPI</span><span>Flutter</span><span>GetX</span><span>Docker</span></div>
+      </article>
+
+      <article class="card third">
+        <div class="meta"><span>Mobile</span><span>Community</span></div>
+        <h3>7alkaty</h3>
+        <p class="sum">Mosque course and imam-following app. Express/MongoDB API documented in Swagger, scheduled push notifications, and a React Native client.</p>
+        <div class="chips"><span>Node</span><span>MongoDB</span><span>Expo</span></div>
+      </article>
+
+      <article class="card third">
+        <div class="meta"><span>Master's thesis</span><span>Computer vision</span></div>
+        <h3>Forest-fire detection</h3>
+        <p class="sum">Three-part system: a citizen reporting app, a data platform and alerting. Detection models built with YOLO and Faster R-CNN.</p>
+        <div class="chips"><span>YOLO</span><span>R-CNN</span><span>Flutter</span><span>Firebase</span></div>
+      </article>
+
+      <article class="card">
+        <div class="meta"><span>Open tooling</span><span>Security</span></div>
+        <h3>ISO 27001 skill for Claude Code</h3>
+        <p class="sum">Checks a codebase against ISO/IEC 27001:2022, plans the rollout step by step, and checks every edit with a scanner hook.</p>
+        <div class="chips"><span>Python</span><span>ISO 27001</span><span>AI tooling</span></div>
+      </article>
+
+      <article class="card">
+        <div class="meta"><span>Startup</span><span>Non-profit</span></div>
+        <h3>Zakat.business</h3>
+        <p class="sum">Award-winning non-profit startup project. I was part of the founding team, working as an auto-entrepreneur.</p>
+        <div class="chips"><span>Product</span><span>Team</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="prod">teaching ::= theory practice</span><h2>Teaching</h2></div>
+      <p>Two years, 12 subjects, students on both the Software Engineering and LMD tracks, Bachelor's and Master's level.</p>
+    </div>
+    <div class="syllabus">
+      <ol class="subjects">
+        <li><code>ALGO</code><strong>Algorithms &amp; data structures</strong><small>Bachelor's</small></li>
+        <li><code>DB</code><strong>Databases</strong><small>Bachelor's</small></li>
+        <li><code>PROG</code><strong>Programming languages, intro to advanced</strong><small>Bachelor's</small></li>
+        <li><code>COMP</code><strong>Compilation</strong><small>Bachelor's / Master's</small></li>
+        <li><code>SEM</code><strong>Semantics</strong><small>Master's</small></li>
+        <li><code>+7</code><strong>Other CS modules (tutorials &amp; labs)</strong><small>Both levels</small></li>
+      </ol>
+      <div class="approach">
+        <article class="card">
+          <h3>Teaching Assistant, UMBB</h3>
+          <p>2022 – 2024. I prepared and ran tutorials and labs, wrote exercises and exams, and adjusted the level for each group, from first programming courses up to formal semantics.</p>
+        </article>
+        <article class="card">
+          <h3>Trainer, DEVUP Club</h3>
+          <p>Hands-on workshops for fellow students on practical software engineering. Participants left with something they had built themselves.</p>
+        </article>
+        <article class="card">
+          <h3>What I bring to a classroom</h3>
+          <p>Examples from real production systems: query plans, failing integrations, grammars that would not parse. Students see why the theory matters before they need it.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="prod">stack ::= tool*</span><h2>Toolbox</h2></div>
+      <p>Mostly back-end and data. I work across the rest of the stack when a project needs it.</p>
+    </div>
+    <dl class="stack">
+      <div><dt>Back-end</dt><dd>Python · FastAPI · Django/DRF · SQLAlchemy 2 (async) · Alembic · Pydantic · Celery · Node/Express</dd></div>
+      <div><dt>Data</dt><dd>PostgreSQL/PostGIS · Redis · Kafka · MongoDB · Neo4j · Elasticsearch · Supabase</dd></div>
+      <div><dt>AI / ML</dt><dd>RAG · LangGraph · FAISS/Chroma · embeddings &amp; reranking · LLM APIs · YOLO / R-CNN · AI-assisted development</dd></div>
+      <div><dt>Front &amp; mobile</dt><dd>TypeScript · Next.js · React · Tailwind · Flutter/Dart · React Native (Expo)</dd></div>
+      <div><dt>Ops &amp; quality</dt><dd>Docker/Compose · nginx · GitHub Actions · Vercel · Loki/Grafana · pytest · Playwright e2e</dd></div>
+      <div><dt>Security &amp; method</dt><dd>JWT · Argon2 · OAuth2 · TOTP 2FA · ISO 27001 · data-residency compliance · contract-first APIs · decision records</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="path">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="prod">path ::= step+</span><h2>Path</h2></div>
+    </div>
+    <ol class="path" reversed>
+      <li><time>Now</time><div><span class="kind">Industry</span><h3>Data Specialist, Structure &amp; Architecture — Solrus</h3><p>Eight-person software studio in Algiers working with clients in the MENA region and the EU. I own back-end and data architecture on client platforms.</p></div></li>
+      <li><time>Ongoing</time><div><span class="kind">Industry</span><h3>Freelance software engineer (auto-entrepreneur)</h3><p>Web, mobile and AI products for local businesses and community organisations, from proposal and prototype to delivery.</p></div></li>
+      <li><time>2022 – 2024</time><div><span class="kind">Teaching</span><h3>Teaching Assistant — Université M'Hamed Bougara, Boumerdès</h3><p>12 subjects, Bachelor's and Master's level.</p></div></li>
+      <li><time>Jan 2024</time><div><span class="kind">Education</span><h3>Master's — Software Engineering &amp; Data Science</h3><p>UMBB. Thesis: forest-fire detection and reporting system.</p></div></li>
+      <li><time>Jan 2022</time><div><span class="kind">Education</span><h3>Bachelor's — Computer Science</h3><p>UMBB.</p></div></li>
+    </ol>
+    <div class="creds"><span>NVIDIA — Intro to Machine Learning</span><span>Neo4j Certified</span><span>EF SET English — C2</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="prod">contact ::= message</span>
+    <h2>Building something,<br>or teaching someone? <a href="mailto:boureghdadrezki@gmail.com">Write.</a></h2>
+    <div class="links">
+      <a href="mailto:boureghdadrezki@gmail.com">boureghdadrezki@gmail.com</a>
+      <a href="tel:+213542708547">+213 542 708 547</a>
+      <a href="https://www.linkedin.com/in/boureghdad-rezki-309720268/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/V0idSeeker" target="_blank" rel="noopener">GitHub</a>
+      <a href="Rezki_Boureghdad_CV_2026.pdf" download>Download CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">© 2026 Rezki Boureghdad · Algiers</div></footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const alts = document.querySelectorAll('.alt');
+  const apply = mode => {
+    root.dataset.mode = mode;
+    alts.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === mode));
+  };
+  const store = (k, v) => { try { v === undefined ? localStorage.getItem(k) : localStorage.setItem(k, v); } catch (e) {} };
+  let initial = new URLSearchParams(location.search).get('mode');
+  if (!initial) { try { initial = localStorage.getItem('mode'); } catch (e) {} }
+  if (initial === 'educator' || initial === 'engineer') apply(initial);
+  alts.forEach(b => b.addEventListener('click', () => {
+    const after = window.onModeChange && window.onModeChange();
+    apply(b.dataset.mode);
+    after && after();
+    store('mode', b.dataset.mode);
+    history.replaceState(null, '', '?mode=' + b.dataset.mode);
+  }));
+})();
+</script>
+<script type="module">
+import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@14.0.0/+esm";
+
+const root = document.documentElement;
+if (root.classList.contains("motion")) {
+  window.__motion = true;
+  const ease = [0.22, 1, 0.36, 1];
+  const rise = { opacity: [0, 1], transform: ["translateY(14px)", "none"] };
+
+  // Entrance: the rule is written token by token, then the name rises out of its mask.
+  animate(".rule > *", { opacity: [0, 1], transform: ["translateY(8px)", "none"] }, { duration: 0.4, delay: stagger(0.06), ease });
+  animate("h1 .ln > span", { transform: ["translateY(105%)", "none"] }, { duration: 0.9, delay: stagger(0.09, { startDelay: 0.3 }), ease });
+  animate(document.querySelectorAll(".lead, .facts"), rise, { duration: 0.7, delay: stagger(0.12, { startDelay: 0.65 }), ease });
+
+  // Scroll reveals: elements entering in the same frame share one stagger.
+  let queue = [];
+  const flush = () => {
+    animate(queue, rise, { duration: 0.6, delay: stagger(0.05), ease });
+    queue = [];
+  };
+  inView(".head, .card, .subjects li, .stack div, .path li, .creds span, #contact h2, .links a", (el) => {
+    if (!queue.length) requestAnimationFrame(flush);
+    queue.push(el);
+  }, { amount: 0.2 });
+
+  // Mode switch: sections slide (FLIP) to their new order instead of jumping.
+  window.onModeChange = () => {
+    const sections = [...document.querySelectorAll("main > section")];
+    const before = sections.map((s) => s.getBoundingClientRect().top);
+    return () => {
+      sections.forEach((s, i) => {
+        const dy = before[i] - s.getBoundingClientRect().top;
+        if (dy) animate(s, { transform: [`translateY(${dy}px)`, "none"] }, { type: "spring", bounce: 0, visualDuration: 0.7 });
+      });
+      animate(".lead", { opacity: [0, 1], transform: ["translateY(8px)", "none"] }, { duration: 0.45, ease });
+    };
+  };
+}
+</script>
+</body>
+</html>
