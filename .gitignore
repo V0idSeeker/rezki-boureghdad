@@ -3,3 +3,6 @@
 .vercel/
 .playwright-mcp/
 Rezki_Boureghdad_CV.pdf
+
+.vercel
+.env*
