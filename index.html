@@ -95,7 +95,7 @@ h2{font:700 clamp(28px,4vw,40px)/1.05 var(--display);letter-spacing:-.03em;margi
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:translate .25s cubic-bezier(.2,.8,.2,1),border-color .25s}
 .grid .card:hover{translate:0 -3px;border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
 .card.wide{display:grid;gap:10px 32px}
-@media (min-width:760px){.card.wide{grid-template-columns:1.1fr 1fr}.card.wide>.meta,.card.wide>h3,.card.wide>.sum{grid-column:1}.card.wide>ul{grid-column:2;grid-row:1 / span 4}.card.wide>.chips{grid-column:1}}
+@media (min-width:760px){.card.wide{grid-template-columns:1.1fr 1fr;grid-template-rows:repeat(4,auto) 1fr}.card.wide>.meta,.card.wide>h3,.card.wide>.sum{grid-column:1}.card.wide>ul{grid-column:2;grid-row:1 / span 5}.card.wide>.chips,.card.wide>.more{grid-column:1;align-self:start}}
 .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font:12px var(--mono);color:var(--muted)}
 .nda{color:var(--accent)}
 .nda::before{content:"◆ "}
@@ -235,6 +235,19 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
         <p class="sum">In an interview I can talk about architecture, data modelling and integration approaches in general terms, without disclosing those projects.</p>
       </article>
 
+      <article class="card wide">
+        <div class="meta"><span>Open source · GPL-3.0</span><span>AI tooling</span></div>
+        <h3>DocMCP — local PDF search for AI coding tools</h3>
+        <p class="sum">Indexes folders of PDFs into a local vector database and serves them as search tools to Kiro, Claude Code or any other MCP client. Nothing leaves the machine.</p>
+        <ul>
+          <li>MCP server written twice, in JavaScript and in Python. Tools for semantic search, score-threshold search, listing sources, and fetching or deleting a full document.</li>
+          <li>Recursive Language Model reasoning: a local LLM gets the full documents in a Python REPL, writes code to explore them and calls sub-LLMs on the parts it needs. It doesn't have to answer from the top-k chunks alone.</li>
+          <li>Local multilingual embeddings (ONNX / sentence-transformers), LLM on Ollama or llama.cpp, web UI with a live ingestion log, one-command Docker Compose.</li>
+        </ul>
+        <div class="chips"><span>MCP</span><span>ChromaDB</span><span>Python</span><span>Node.js</span><span>Ollama</span><span>Docker</span></div>
+        <a class="more" href="https://github.com/V0idSeeker/RAG-MCP" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
       <article class="card third">
         <div class="meta"><span>Community</span><span>Multi-tenant</span></div>
         <h3>Ahl Quran school manager</h3>
@@ -323,7 +336,7 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
     <dl class="stack">
       <div><dt>Back-end</dt><dd>Python · FastAPI · Django/DRF · SQLAlchemy 2 (async) · Alembic · Pydantic · Celery · Node/Express</dd></div>
       <div><dt>Data</dt><dd>PostgreSQL/PostGIS · Redis · Kafka · MongoDB · Neo4j · Elasticsearch · Supabase</dd></div>
-      <div><dt>AI / ML</dt><dd>RAG · LangGraph · FAISS/Chroma · embeddings &amp; reranking · LLM APIs · YOLO / R-CNN · AI-assisted development</dd></div>
+      <div><dt>AI / ML</dt><dd>RAG · MCP servers · LangGraph · FAISS/Chroma · embeddings &amp; reranking · LLM APIs · YOLO / R-CNN · AI-assisted development</dd></div>
       <div><dt>Front &amp; mobile</dt><dd>TypeScript · Next.js · React · Tailwind · Flutter/Dart · React Native (Expo)</dd></div>
       <div><dt>Ops &amp; quality</dt><dd>Docker/Compose · nginx · GitHub Actions · Vercel · Loki/Grafana · pytest · Playwright e2e</dd></div>
       <div><dt>Security &amp; method</dt><dd>JWT · Argon2 · OAuth2 · TOTP 2FA · ISO 27001 · data-residency compliance · contract-first APIs · decision records</dd></div>

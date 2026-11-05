@@ -182,6 +182,15 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       </div>
 
       <div class="job">
+        <div class="job-h"><h3>DocMCP — local PDF search server for AI tools</h3><span class="tag">Open source</span></div>
+        <ul>
+          <li>Ingests PDF folders into ChromaDB and serves them to any MCP client (Kiro, Claude Code) as semantic-search tools. Fully local: ONNX / sentence-transformer embeddings, LLM on Ollama.</li>
+          <li>Recursive Language Model reasoning: a local LLM explores the full documents in a Python REPL instead of relying on top-k chunks. Web UI and one-command Docker setup.</li>
+        </ul>
+        <span class="k">Python · Node.js · MCP · ChromaDB · Ollama · Docker · github.com/V0idSeeker/RAG-MCP</span>
+      </div>
+
+      <div class="job">
         <div class="job-h"><h3>Ahl Quran — multi-tenant school manager</h3><span class="tag">Community</span></div>
         <ul><li>Study circles, attendance, student progress, messaging and reports, separated by organisation. Web and mobile apps.</li></ul>
         <span class="k">FastAPI · PostgreSQL · Flutter/GetX · Docker</span>
@@ -219,7 +228,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       <dl>
         <dt>Back-end</dt><dd>Python, FastAPI, Django/DRF, SQLAlchemy 2 (async), Alembic, Pydantic, Celery, Node/Express</dd>
         <dt>Data</dt><dd>PostgreSQL/PostGIS, Redis, Kafka, MongoDB, Neo4j, Elasticsearch, Supabase</dd>
-        <dt>AI / ML</dt><dd>RAG, LangGraph, FAISS/Chroma, embeddings &amp; reranking, LLM APIs, YOLO/R-CNN</dd>
+        <dt>AI / ML</dt><dd>RAG, MCP servers, LangGraph, FAISS/Chroma, embeddings &amp; reranking, LLM APIs, YOLO/R-CNN</dd>
         <dt>Front &amp; mobile</dt><dd>TypeScript, Next.js, React, Tailwind, Flutter/Dart, React Native</dd>
         <dt>Ops &amp; quality</dt><dd>Docker, nginx, GitHub Actions, Vercel, Grafana/Loki, pytest, Playwright</dd>
         <dt>Security</dt><dd>JWT, Argon2, OAuth2, TOTP 2FA, ISO 27001, data residency</dd>
