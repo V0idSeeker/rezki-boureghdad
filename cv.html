@@ -54,7 +54,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
   <header>
     <div>
       <h1>Rezki Boureghdad</h1>
-      <p class="role">Back-end &amp; Data Engineer</p>
+      <p class="role">Software Engineer · Back-end</p>
     </div>
     <div class="contact">
       Algiers, Algeria<br>
@@ -69,32 +69,32 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
   <main>
     <section>
       <h2>Profile</h2>
-      <p class="summary">Back-end and data engineer, and a founding member of Solrus, a software studio in Algiers. I build the Python services, PostgreSQL data models and REST APIs behind large, multi-service B2B platforms: distributed, event-driven systems with FastAPI, Kafka and Redis, delivered test-first. Freelance full-stack developer since 2021, and a part-time computer-science teaching assistant.</p>
+      <p class="summary">Software engineer specialising in back-end, and a founding member of Solrus, a software studio in Algiers. I build the Python services, PostgreSQL data models and REST APIs behind large, multi-service B2B platforms (FastAPI, Kafka, Redis), and I find and fix what slows them down: login cut from 6.2 s to 0.2 s, catalogue reads from 420 ms to 18 ms. Freelance full-stack developer since 2021, and a part-time computer-science teaching assistant.</p>
     </section>
 
     <section>
       <h2>Experience</h2>
 
       <div class="job">
-        <div class="job-h"><h3 class="dot-e">Back-end &amp; Data Engineer · Founding Member</h3><time>Jun 2025 – Present</time></div>
-        <p class="org">Solrus — software studio, team of 4–8 · Algiers, remote-first · official title: Data Specialist, Structure &amp; Architecture</p>
+        <div class="job-h"><h3 class="dot-e">Data Specialist, Structure &amp; Architecture (Back-end Engineer) · Founding Member</h3><time>Jun 2025 – Present</time></div>
+        <p class="org">Solrus — software studio, team of 4–8 · Algiers, remote-first</p>
         <ul>
           <li>Back-end and data engineering for large, multi-service B2B platforms (confidential clients): domain models, PostgreSQL schemas and Alembic migrations, REST API contracts, third-party integrations.</li>
           <li>Build distributed, event-driven Python services (FastAPI, SQLAlchemy 2, Kafka, Redis, Celery).</li>
           <li>Found and fixed a bottleneck in an event-driven auth flow: login time from 6.2 s to 0.2 s.</li>
           <li>Load-tested a platform with k6 at 200 concurrent users, then fixed what it exposed: password hashing off the event loop (p95 −18% overall, −31% on the CRM) and paginated catalogue reads (420 ms → 18 ms per page).</li>
           <li>Sped up a matching engine with a teammate (typical run 94 → 28 ms), and cut the test suite from 290 s to 44 s with parallel pytest and per-worker databases.</li>
-          <li>Security in the design from the start: role-based access, 2FA, audit trails, data-residency compliance, hardening before audits.</li>
-          <li>Review much of the team's work through test scenarios (pytest against real PostgreSQL, Playwright end to end), raising API test coverage and catching bugs before release.</li>
-          <li>QA and debugging on <b>Zakat.business</b>, the founding team's non-profit platform: 20+ companies used it, and it won a Label award.</li>
+          <li>Security by design: role-based access, TOTP 2FA, audit trails, data residency. Ran an internal grey-box review (about 20 checks) before an external pen test: no serious vulnerability, 4 low findings fixed.</li>
+          <li>Write test scenarios for teammates' features (pytest on real PostgreSQL, Playwright end to end) and send findings back before release, on an API test suite that grew from about 200 to 1,600+ tests.</li>
+          <li>QA and debugging for <b>Zakat.business</b>, the founding team's non-profit platform (Label award, 20+ companies).</li>
         </ul>
       </div>
 
       <div class="job">
         <div class="job-h"><h3 class="dot-e">Freelance Full-Stack Developer</h3><time>May 2021 – Present</time></div>
-        <p class="org">Self-employed (auto-entrepreneur) · contract-based, full-time when engaged</p>
+        <p class="org">Self-employed (auto-entrepreneur) · contract basis</p>
         <ul>
-          <li>10+ client projects and feature builds for businesses and community organisations, from scoping and prototype to deployment (web, mobile, AI).</li>
+          <li>10+ client projects and feature builds (web, mobile, AI), from scoping to deployment, including e-motion, Ahl Quran and 7alkaty (see projects).</li>
         </ul>
       </div>
 
@@ -102,7 +102,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
         <div class="job-h"><h3 class="dot-t">Teaching Assistant — Computer Science</h3><time>Nov 2024 – Present</time></div>
         <p class="org">Université M'Hamed Bougara, Boumerdès · part-time, up to 12 h/week</p>
         <ul>
-          <li>Tutorials and labs for up to 8 groups of 30–40 students, Bachelor's and Master's level, across 12 subjects including algorithms, databases, language theory and compilation.</li>
+          <li>Tutorials and labs for up to 8 groups of 30–40 students across 12 subjects (algorithms, databases, language theory, compilation), with a 70% pass rate.</li>
         </ul>
       </div>
 
@@ -113,8 +113,8 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
     <section>
       <h2>Education</h2>
       <ul class="side-list">
-        <li><b>MSc Software Engineering &amp; Data Science</b><span>Université M'Hamed Bougara, Boumerdès · Jan 2024</span></li>
-        <li><b>BSc Computer Science</b><span>Université M'Hamed Bougara, Boumerdès · Jan 2022</span></li>
+        <li><b>MSc Software Engineering &amp; Data Science</b><span>Université M'Hamed Bougara, Boumerdès · graduated Jan 2024</span></li>
+        <li><b>BSc Computer Science</b><span>Université M'Hamed Bougara, Boumerdès · graduated Jan 2022</span></li>
       </ul>
     </section>
     <section>
@@ -168,7 +168,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       </div>
 
       <div class="job">
-        <div class="job-h"><h3>e-motion — back-office for cash-on-delivery shops</h3><span class="tag">In use</span></div>
+        <div class="job-h"><h3>e-motion — back-office for cash-on-delivery shops</h3><span class="tag">Freelance · in use</span></div>
         <ul>
           <li>Built for an e-commerce business that runs its orders, stock, couriers and expenses on it, with real profit per order. Weighted-average purchase cost, stock that can never go below zero, alerts for customers who often cancel or return, and an audit log.</li>
           <li>Excel import, packing slips, English/French interface.</li>
@@ -183,7 +183,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       </div>
 
       <div class="job">
-        <div class="job-h"><h3>Community apps — Ahl Quran &amp; 7alkaty</h3><span class="tag">Community</span></div>
+        <div class="job-h"><h3>Community apps — Ahl Quran &amp; 7alkaty</h3><span class="tag">Freelance</span></div>
         <ul>
           <li><b>Ahl Quran:</b> multi-tenant Quran-school manager for study circles, attendance and progress (FastAPI, PostgreSQL, Flutter).</li>
           <li><b>7alkaty:</b> mosque course and imam-following app with scheduled push notifications (Node/Express, MongoDB, Expo).</li>
@@ -196,11 +196,6 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
         <span class="k">Python · YOLO · R-CNN · Flutter · Firebase</span>
       </div>
 
-      <div class="job">
-        <div class="job-h"><h3>ISO 27001 skill for Claude Code</h3><span class="tag">Tooling</span></div>
-        <ul><li>Checks a codebase against ISO/IEC 27001:2022, plans the rollout step by step, and checks every edit with a scanner hook.</li></ul>
-        <span class="k">Python · Security compliance · AI tooling</span>
-      </div>
     </section>
   </main>
 
@@ -212,7 +207,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
         <dt>Data</dt><dd>PostgreSQL/PostGIS, SQL, Redis, Kafka, MongoDB, Neo4j, Supabase</dd>
         <dt>AI / ML</dt><dd>RAG, MCP servers, FAISS/Chroma, embeddings &amp; reranking, LLM APIs, YOLO/R-CNN</dd>
         <dt>Front &amp; mobile</dt><dd>TypeScript, Next.js, React, Flutter/Dart</dd>
-        <dt>Ops &amp; quality</dt><dd>Docker, nginx, OVH, VPS hosting, GitHub Actions, Vercel, Grafana/Loki, pytest, Playwright</dd>
+        <dt>Ops &amp; quality</dt><dd>Docker, nginx, Linux servers (SSH, xrdp), OVH, VPS hosting, GitHub Actions, Vercel, Grafana/Loki, pytest, Playwright</dd>
         <dt>Security</dt><dd>JWT, Argon2, OAuth2, TOTP 2FA, ISO 27001, data residency</dd>
         <dt>Also</dt><dd>Contract-first API design, decision records, test scenarios as review, AI-assisted development</dd>
       </dl>
