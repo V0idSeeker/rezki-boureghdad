@@ -76,15 +76,15 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       <h2>Experience</h2>
 
       <div class="job">
-        <div class="job-h"><h3 class="dot-e">Back-end Engineer · Founding Member</h3><time>Jun 2025 – Present</time></div>
-        <p class="org">Solrus · official title: Data Specialist, Structure &amp; Architecture · team of 4–8 · Algiers</p>
+        <div class="job-h"><h3 class="dot-e">Data Specialist, Structure &amp; Architecture</h3><time>Jun 2025 – Present</time></div>
+        <p class="org">Solrus — founding member · software studio, team of 4–8 · Algiers</p>
         <ul>
-          <li>Back-end and data engineering for large, multi-service B2B platforms (confidential clients): domain models, PostgreSQL schemas and Alembic migrations, REST API contracts, third-party integrations.</li>
-          <li>Build distributed, event-driven Python services (FastAPI, SQLAlchemy 2, Kafka, Redis, Celery).</li>
+          <li>Back-end engineering for large, multi-service, event-driven B2B platforms (confidential clients; FastAPI, SQLAlchemy 2, Kafka, Redis, Celery): domain models, PostgreSQL schemas and Alembic migrations, REST API contracts, third-party integrations. Main back-end contributor on the largest platform.</li>
           <li>Found and fixed a bottleneck in an event-driven auth flow: login time from 6.2 s to 0.2 s.</li>
-          <li>Load-tested a platform with k6 at 200 concurrent users, then fixed what it exposed: password hashing off the event loop (p95 2.8 → 2.3 s overall, 3.1 → 2.2 s on the CRM) and paginated catalogue reads (420 ms → 18 ms per page).</li>
+          <li>Load-tested a platform with k6 at 200 concurrent users, then fixed what it exposed: password hashing moved off the event loop (p95 −18% overall, −31% on the CRM) and paginated catalogue reads (420 ms → 18 ms per page).</li>
           <li>Sped up a matching engine with a teammate (typical run 94 → 28 ms), and cut the test suite from 290 s to 44 s with parallel pytest and per-worker databases.</li>
-          <li>Security by design: role-based access, TOTP 2FA, audit trails, data residency. Ran an internal grey-box review (about 20 checks) before an external pen test: no serious vulnerability, 4 low findings fixed.</li>
+          <li>Run production on the lean single-VPS setups clients choose: Docker, nginx with TLS and hardening, versioned releases with automatic rollback, Loki/Grafana and GlitchTip monitoring.</li>
+          <li>Security by design (RBAC, TOTP 2FA, audit trails, data residency). Internal grey-box review before an external pen test: no serious vulnerability, 4 low findings fixed.</li>
           <li>Write test scenarios for teammates' features (pytest on real PostgreSQL, Playwright end to end) and send findings back before release, on an API test suite that grew from about 200 to 1,600+ tests.</li>
           <li>QA and debugging for <b>Zakat.business</b>, the founding team's non-profit platform (Label award, 20+ companies).</li>
         </ul>
@@ -95,14 +95,6 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
         <p class="org">Self-employed (auto-entrepreneur) · contract basis</p>
         <ul>
           <li>10+ client projects and feature builds (web, mobile, AI), from scoping to deployment, including e-motion, Ahl Quran and 7alkaty (see projects).</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-h"><h3 class="dot-t">Teaching Assistant — Computer Science</h3><time>Nov 2024 – Present</time></div>
-        <p class="org">Université M'Hamed Bougara, Boumerdès · part-time, up to 12 h/week</p>
-        <ul>
-          <li>Tutorials and labs for up to 8 groups of 30–40 students across 12 subjects (algorithms, databases, language theory, compilation): 70% pass rate, up from about 40% usually.</li>
         </ul>
       </div>
 
@@ -141,6 +133,17 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
 <div class="page">
   <main>
     <section>
+      <h2>Teaching</h2>
+      <div class="job">
+        <div class="job-h"><h3 class="dot-t">Teaching Assistant — Computer Science</h3><time>Nov 2024 – Present</time></div>
+        <p class="org">Université M'Hamed Bougara, Boumerdès · part-time, up to 12 h/week</p>
+        <ul>
+          <li>Tutorials and labs for up to 8 groups of 30–40 students across 12 subjects (algorithms, databases, language theory, compilation): 70% pass rate, up from about 40% usually.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
       <h2>Selected projects</h2>
 
       <div class="job">
@@ -177,12 +180,6 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       </div>
 
       <div class="job">
-        <div class="job-h"><h3>VoidSketches — free CS lessons through analogies</h3><span class="tag">Own product</span></div>
-        <ul><li>Animated, narrated lessons in English and French, one concept each, starting with compilation. Local TTS pipeline whose timings drive animation and captions.</li></ul>
-        <span class="k">React · Vite · TTS · voidsketches.vercel.app</span>
-      </div>
-
-      <div class="job">
         <div class="job-h"><h3>Community apps — Ahl Quran &amp; 7alkaty</h3><span class="tag">Freelance</span></div>
         <ul>
           <li><b>Ahl Quran:</b> multi-tenant Quran-school manager for study circles, attendance and progress (FastAPI, PostgreSQL, Flutter).</li>
@@ -205,7 +202,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
       <dl>
         <dt>Back-end</dt><dd>Python, FastAPI, Django/DRF, SQLAlchemy 2 (async), Alembic, Pydantic, Celery, REST APIs</dd>
         <dt>Data</dt><dd>PostgreSQL/PostGIS, SQL, Redis, Kafka</dd>
-        <dt>Quality &amp; ops</dt><dd>pytest, Playwright, k6, Docker, nginx, GitHub Actions, Grafana/Loki, Linux servers (SSH), OVH / VPS hosting</dd>
+        <dt>Quality &amp; ops</dt><dd>pytest, Playwright, k6, Docker, nginx, GitHub Actions, Grafana/Loki, GlitchTip, Linux servers (SSH), OVH / VPS hosting</dd>
         <dt>Security</dt><dd>JWT, Argon2, OAuth2, TOTP 2FA, data residency</dd>
         <dt>Practice</dt><dd>Contract-first API design, decision records, test scenarios as review</dd>
         <dt>Also</dt><dd>TypeScript, Next.js, Flutter, MongoDB, Node/Express, RAG / MCP servers</dd>
