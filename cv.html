@@ -69,20 +69,20 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
   <main>
     <section>
       <h2>Profile</h2>
-      <p class="summary">Software engineer specialising in back-end, and a founding member of Solrus, a software studio in Algiers. I build the Python services, PostgreSQL data models and REST APIs behind large, multi-service B2B platforms (FastAPI, Kafka, Redis), and I find and fix what slows them down: login cut from 6.2 s to 0.2 s, catalogue reads from 420 ms to 18 ms. Freelance full-stack developer since 2021, and a part-time computer-science teaching assistant.</p>
+      <p class="summary">Software engineer specialising in back-end, and a founding member of Solrus, a software studio in Algiers. I build the Python services, PostgreSQL data models and REST APIs behind large, multi-service B2B platforms (FastAPI, Kafka, Redis), and I find and fix what slows them down: login cut from 6.2 s to 0.2 s, catalogue reads from 420 ms to 18 ms. Freelance full-stack developer since 2021.</p>
     </section>
 
     <section>
       <h2>Experience</h2>
 
       <div class="job">
-        <div class="job-h"><h3 class="dot-e">Data Specialist, Structure &amp; Architecture (Back-end Engineer) · Founding Member</h3><time>Jun 2025 – Present</time></div>
-        <p class="org">Solrus — software studio, team of 4–8 · Algiers, remote-first</p>
+        <div class="job-h"><h3 class="dot-e">Back-end Engineer · Founding Member</h3><time>Jun 2025 – Present</time></div>
+        <p class="org">Solrus · official title: Data Specialist, Structure &amp; Architecture · team of 4–8 · Algiers</p>
         <ul>
           <li>Back-end and data engineering for large, multi-service B2B platforms (confidential clients): domain models, PostgreSQL schemas and Alembic migrations, REST API contracts, third-party integrations.</li>
           <li>Build distributed, event-driven Python services (FastAPI, SQLAlchemy 2, Kafka, Redis, Celery).</li>
           <li>Found and fixed a bottleneck in an event-driven auth flow: login time from 6.2 s to 0.2 s.</li>
-          <li>Load-tested a platform with k6 at 200 concurrent users, then fixed what it exposed: password hashing off the event loop (p95 −18% overall, −31% on the CRM) and paginated catalogue reads (420 ms → 18 ms per page).</li>
+          <li>Load-tested a platform with k6 at 200 concurrent users, then fixed what it exposed: password hashing off the event loop (p95 2.8 → 2.3 s overall, 3.1 → 2.2 s on the CRM) and paginated catalogue reads (420 ms → 18 ms per page).</li>
           <li>Sped up a matching engine with a teammate (typical run 94 → 28 ms), and cut the test suite from 290 s to 44 s with parallel pytest and per-worker databases.</li>
           <li>Security by design: role-based access, TOTP 2FA, audit trails, data residency. Ran an internal grey-box review (about 20 checks) before an external pen test: no serious vulnerability, 4 low findings fixed.</li>
           <li>Write test scenarios for teammates' features (pytest on real PostgreSQL, Playwright end to end) and send findings back before release, on an API test suite that grew from about 200 to 1,600+ tests.</li>
@@ -102,7 +102,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
         <div class="job-h"><h3 class="dot-t">Teaching Assistant — Computer Science</h3><time>Nov 2024 – Present</time></div>
         <p class="org">Université M'Hamed Bougara, Boumerdès · part-time, up to 12 h/week</p>
         <ul>
-          <li>Tutorials and labs for up to 8 groups of 30–40 students across 12 subjects (algorithms, databases, language theory, compilation), with a 70% pass rate.</li>
+          <li>Tutorials and labs for up to 8 groups of 30–40 students across 12 subjects (algorithms, databases, language theory, compilation): 70% pass rate, up from about 40% usually.</li>
         </ul>
       </div>
 
@@ -113,7 +113,7 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
     <section>
       <h2>Education</h2>
       <ul class="side-list">
-        <li><b>MSc Software Engineering &amp; Data Science</b><span>Université M'Hamed Bougara, Boumerdès · graduated Jan 2024</span></li>
+        <li><b>MSc Software Eng. &amp; Data Science</b><span>Université M'Hamed Bougara, Boumerdès · graduated Jan 2024</span></li>
         <li><b>BSc Computer Science</b><span>Université M'Hamed Bougara, Boumerdès · graduated Jan 2022</span></li>
       </ul>
     </section>
@@ -203,25 +203,13 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
     <section>
       <h2>Skills</h2>
       <dl>
-        <dt>Back-end</dt><dd>Python, FastAPI, Django/DRF, SQLAlchemy 2 (async), Alembic, Pydantic, Celery, REST APIs, Node/Express</dd>
-        <dt>Data</dt><dd>PostgreSQL/PostGIS, SQL, Redis, Kafka, MongoDB, Neo4j, Supabase</dd>
-        <dt>AI / ML</dt><dd>RAG, MCP servers, FAISS/Chroma, embeddings &amp; reranking, LLM APIs, YOLO/R-CNN</dd>
-        <dt>Front &amp; mobile</dt><dd>TypeScript, Next.js, React, Flutter/Dart</dd>
-        <dt>Ops &amp; quality</dt><dd>Docker, nginx, Linux servers (SSH, xrdp), OVH, VPS hosting, GitHub Actions, Vercel, Grafana/Loki, pytest, Playwright</dd>
-        <dt>Security</dt><dd>JWT, Argon2, OAuth2, TOTP 2FA, ISO 27001, data residency</dd>
-        <dt>Also</dt><dd>Contract-first API design, decision records, test scenarios as review, AI-assisted development</dd>
+        <dt>Back-end</dt><dd>Python, FastAPI, Django/DRF, SQLAlchemy 2 (async), Alembic, Pydantic, Celery, REST APIs</dd>
+        <dt>Data</dt><dd>PostgreSQL/PostGIS, SQL, Redis, Kafka</dd>
+        <dt>Quality &amp; ops</dt><dd>pytest, Playwright, k6, Docker, nginx, GitHub Actions, Grafana/Loki, Linux servers (SSH), OVH / VPS hosting</dd>
+        <dt>Security</dt><dd>JWT, Argon2, OAuth2, TOTP 2FA, data residency</dd>
+        <dt>Practice</dt><dd>Contract-first API design, decision records, test scenarios as review</dd>
+        <dt>Also</dt><dd>TypeScript, Next.js, Flutter, MongoDB, Node/Express, RAG / MCP servers</dd>
       </dl>
-    </section>
-    <section>
-      <h2>CS foundations</h2>
-      <ul class="side-list">
-        <li>Algorithms &amp; complexity</li>
-        <li>Compilers &amp; formal languages</li>
-        <li>Formal methods</li>
-        <li>Deep learning</li>
-        <li>Programming-language semantics</li>
-        <li>Database theory &amp; graph databases</li>
-      </ul>
     </section>
   </aside>
 
