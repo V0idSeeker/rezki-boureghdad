@@ -81,7 +81,9 @@ footer{position:absolute;left:14mm;right:14mm;bottom:9mm;font:7.6pt "IBM Plex Mo
         <ul>
           <li>Back-end and data engineering for large, multi-service B2B platforms (confidential clients): domain models, PostgreSQL schemas and Alembic migrations, REST API contracts, third-party integrations.</li>
           <li>Build distributed, event-driven Python services (FastAPI, SQLAlchemy 2, Kafka, Redis, Celery).</li>
-          <li>Found and fixed a bottleneck in an event-driven auth flow: login time from 6.2 s to 0.2 s. Also tune slow database queries with indexing, and reduce service memory use.</li>
+          <li>Found and fixed a bottleneck in an event-driven auth flow: login time from 6.2 s to 0.2 s.</li>
+          <li>Load-tested a platform with k6 at 200 concurrent users, then fixed what it exposed: password hashing off the event loop (p95 −18% overall, −31% on the CRM) and paginated catalogue reads (420 ms → 18 ms per page).</li>
+          <li>Sped up a matching engine with a teammate (typical run 94 → 28 ms), and cut the test suite from 290 s to 44 s with parallel pytest and per-worker databases.</li>
           <li>Security in the design from the start: role-based access, 2FA, audit trails, data-residency compliance, hardening before audits.</li>
           <li>Review much of the team's work through test scenarios (pytest against real PostgreSQL, Playwright end to end), raising API test coverage and catching bugs before release.</li>
           <li>QA and debugging on <b>Zakat.business</b>, the founding team's non-profit platform: 20+ companies used it, and it won a Label award.</li>
