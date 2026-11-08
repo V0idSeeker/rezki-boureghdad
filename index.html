@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rezki Boureghdad</title>
-<meta name="description" content="Rezki Boureghdad — back-end & data architect at Solrus (Algiers) and computer-science educator.">
+<meta name="description" content="Rezki Boureghdad — back-end & data engineer at Solrus (Algiers) and computer-science educator.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -73,6 +73,9 @@ h1 .acc{color:var(--accent);transition:color .3s}
 .lead [data-for]{display:none}
 html[data-mode="engineer"] .lead [data-for="engineer"],
 html[data-mode="educator"] .lead [data-for="educator"]{display:inline}
+.bar .cv[data-for]{display:none}
+html[data-mode="engineer"] .bar .cv[data-for="engineer"],
+html[data-mode="educator"] .bar .cv[data-for="educator"]{display:inline}
 .facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin:28px 0 0;padding:0;list-style:none;font:13px var(--mono);color:var(--muted)}
 .facts a{text-decoration-color:var(--line);text-underline-offset:3px}
 
@@ -169,7 +172,8 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
       <a href="#stack">stack</a>
       <a href="#path">path</a>
       <a href="#contact">contact</a>
-      <a class="cv" href="Rezki_Boureghdad_CV_2026.pdf" download>cv.pdf ↓</a>
+      <a class="cv" data-for="engineer" href="Rezki_Boureghdad_CV_2026.pdf" download>cv.pdf ↓</a>
+      <a class="cv" data-for="educator" href="Rezki_Boureghdad_Teaching_CV_2026.pdf" download>cv.pdf ↓</a>
     </nav>
   </div>
 </header>
@@ -183,7 +187,7 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
   </p>
   <h1><span class="ln"><span>Rezki</span></span><span class="ln acc"><span>Boureghdad</span></span></h1>
   <p class="lead">
-    <span data-for="engineer">Back-end and data architect at <a href="https://www.solrus.pro" target="_blank" rel="noopener">Solrus</a>, a software studio in Algiers. I design the data models, APIs and integrations that let a product grow without a rewrite.</span>
+    <span data-for="engineer">Back-end and data engineer at <a href="https://www.solrus.pro" target="_blank" rel="noopener">Solrus</a>, a software studio in Algiers. I design the data models, APIs and integrations that let a product grow without a rewrite.</span>
     <span data-for="educator">Computer-science educator. I teach at Université M'Hamed Bougara, where I have covered 12 subjects so far, from algorithms to compiler theory, for Bachelor's and Master's students. I still build production systems every day, so the examples I use in class come from real projects.</span>
   </p>
   <ul class="facts">
@@ -218,9 +222,9 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
       </article>
 
       <article class="card">
-        <div class="meta"><span>Own product</span><span>Retail ops</span></div>
+        <div class="meta"><span>Built for a client · in use</span><span>Retail ops</span></div>
         <h3>e-motion</h3>
-        <p class="sum">Back-office for cash-on-delivery shops in Algeria: orders, stock, couriers, and the profit that is actually left.</p>
+        <p class="sum">Back-office built for an e-commerce business that runs on it every day: orders, stock, couriers, and the profit that is actually left.</p>
         <ul>
           <li>Weighted-average purchase cost, stock that can never go below zero, and alerts for customers who often cancel or return.</li>
           <li>Excel import, packing slips, audit log, EN/FR. Runs on free tiers.</li>
@@ -299,7 +303,7 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
       <article class="card third">
         <div class="meta"><span>Startup</span><span>Non-profit</span></div>
         <h3>Zakat.business</h3>
-        <p class="sum">Award-winning non-profit startup project. I was part of the founding team, working as an auto-entrepreneur.</p>
+        <p class="sum">Non-profit startup that won a Label award. I helped with testing and debugging.</p>
         <div class="chips"><span>Product</span><span>Team</span></div>
       </article>
 
@@ -367,10 +371,10 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
       <div><span class="prod">path ::= step+</span><h2>Path</h2></div>
     </div>
     <ol class="path" reversed>
-      <li><time>2025 – now</time><div><span class="kind">Industry</span><h3>Data Specialist, Structure &amp; Architecture — Solrus</h3><p>Eight-person software studio in Algiers working with clients in the MENA region and the EU. I own back-end and data architecture on client platforms.</p></div></li>
-      <li><time>Nov 2024 – now</time><div><span class="kind">Teaching</span><h3>Teaching Assistant — Université M'Hamed Bougara, Boumerdès</h3><p>12 subjects, Bachelor's and Master's level.</p></div></li>
+      <li><time>Jun 2025 – now</time><div><span class="kind">Industry</span><h3>Data Specialist, Structure &amp; Architecture — Solrus</h3><p>Software studio in Algiers. In a team of 4–8, I do back-end and data engineering on large B2B platforms and review much of the team's work through test scenarios.</p></div></li>
+      <li><time>Nov 2024 – now</time><div><span class="kind">Teaching</span><h3>Teaching Assistant — Université M'Hamed Bougara, Boumerdès</h3><p>Part-time, up to 12 h a week. 12 subjects, Bachelor's and Master's level, plus extra support sessions.</p></div></li>
       <li><time>Oct 2024 – Sep 2026</time><div><span class="kind">Teaching</span><h3>Development Mentor — DevUp Club, Boumerdès</h3><p>Coached student developers through workshops and their own projects.</p></div></li>
-      <li><time>May 2021 – now</time><div><span class="kind">Industry</span><h3>Freelance full-stack developer (auto-entrepreneur)</h3><p>Web, mobile and AI products for local businesses and community organisations, from proposal and prototype to delivery.</p></div></li>
+      <li><time>May 2021 – now</time><div><span class="kind">Industry</span><h3>Freelance full-stack developer (auto-entrepreneur)</h3><p>Contract-based, full-time when engaged. 10+ client projects and feature builds (web, mobile, AI), from proposal and prototype to delivery.</p></div></li>
       <li><time>Jan 2024</time><div><span class="kind">Education</span><h3>Master's — Software Engineering &amp; Data Science</h3><p>UMBB. Thesis: forest-fire detection and reporting system.</p></div></li>
       <li><time>Jan 2022</time><div><span class="kind">Education</span><h3>Bachelor's — Computer Science</h3><p>UMBB.</p></div></li>
     </ol>
@@ -387,7 +391,8 @@ footer{padding:32px 0 48px;font:12px var(--mono);color:var(--muted)}
       <a href="tel:+213542708547">+213 542 708 547</a>
       <a href="https://www.linkedin.com/in/boureghdad-rezki-309720268/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/V0idSeeker" target="_blank" rel="noopener">GitHub</a>
-      <a href="Rezki_Boureghdad_CV_2026.pdf" download>Download CV (PDF)</a>
+      <a href="Rezki_Boureghdad_CV_2026.pdf" download>Engineering CV (PDF)</a>
+      <a href="Rezki_Boureghdad_Teaching_CV_2026.pdf" download>Teaching CV (PDF)</a>
     </div>
   </div>
 </section>
